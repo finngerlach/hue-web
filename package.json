@@ -1,0 +1,9 @@
+{
+  "name": "hue-web",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:finngerlach/hue-web.git",
+  "scripts": {
+    "start": "DOCKER_BUILDKIT=1 docker-compose build && docker-compose up"
+  }
+}
