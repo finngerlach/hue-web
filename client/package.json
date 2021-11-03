@@ -7,7 +7,9 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "@urql/vue": "^0.6.0",
     "config": "^3.3.6",
+    "graphql": "^16.0.1",
     "vue": "^3.2.16",
     "vue-router": "4"
   },
