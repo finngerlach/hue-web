@@ -7,11 +7,17 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "@urql/vue": "^0.6.0",
     "config": "^3.3.6",
-    "vue": "^3.2.16"
+    "graphql": "^16.0.1",
+    "vue": "^3.2.16",
+    "vue-router": "4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.9.3",
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.3.11",
+    "tailwindcss": "^2.2.19",
     "vite": "^2.6.4"
   }
 }
