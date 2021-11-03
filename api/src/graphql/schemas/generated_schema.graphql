@@ -1,0 +1,16 @@
+type Query {
+  discoverBridgesFast: [BridgeDiscoveryResult!]!
+  discoverBridgesSlow: [BridgeDiscoverySuccess!]!
+}
+
+union BridgeDiscoveryResult = BridgeDiscoverySuccess | BridgeDiscoveryError
+
+type BridgeDiscoverySuccess {
+  name: String!
+  ip: String!
+}
+
+type BridgeDiscoveryError {
+  message: String!
+  description: String!
+}
