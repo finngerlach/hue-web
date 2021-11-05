@@ -1,0 +1,11 @@
+{
+  "eslint.validate": [
+    "javascript",
+    "vue"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.packageManager": "yarn",
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+}
