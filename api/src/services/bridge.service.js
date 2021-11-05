@@ -10,8 +10,8 @@ module.exports = {
         ip: entry.ipaddress
       }
       else return {
-        message: entry.message,
-        description: entry.description
+        message: entry.error.message,
+        description: entry.error.description
       }
     })
   },
