@@ -1,5 +1,7 @@
 {
   "recommendations": [
-    "orta.vscode-jest"
+    "orta.vscode-jest",
+    "dbaeumer.vscode-eslint",
+    "graphql.vscode-graphql"
   ]
 }
