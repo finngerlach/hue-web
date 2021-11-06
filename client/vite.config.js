@@ -7,6 +7,12 @@ export default defineConfig({
   plugins: [vue()],
   server: {
     port: config.get('port'),
-    host: config.get('host')
+    host: config.get('host'),
+    proxy: {
+      '/api': {
+        target: process.env.API_URL,
+        rewrite: (path) => path.replace(/^\/api/, '')
+      }
+    }
   }
 })

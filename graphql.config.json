@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "client": {
+      "schema": "./api/src/graphql/schemas/generated_schema.graphql",
+      "documents": "./client/src/**/*.{graphql,js,ts,jsx,tsx,vue}"
+    }
+  }
+}

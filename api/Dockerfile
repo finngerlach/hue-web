@@ -1,4 +1,4 @@
-FROM node:17-alpine AS build
+FROM node:16-alpine AS build
 
 WORKDIR /app
 RUN chown -R node:node /app
@@ -13,3 +13,6 @@ EXPOSE 3030
 
 FROM build AS dev
 CMD ["yarn", "run", "dev"]
+
+FROM build AS prod
+CMD ["yarn", "run", "start"]
