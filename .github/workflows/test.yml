@@ -55,8 +55,8 @@ jobs:
         run: COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose -f docker-compose.staging.yml build
       - name: Export containers to files
         run: |
-          docker save -o hue-web_api.tar hue-web_api
-          docker save -o hue-web_client.tar hue-web_client
+          docker save hue-web_api | gzip > hue-web_api.tar.gz
+          docker save hue-web_client | gzip > hue-web_client.tar.gz
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
