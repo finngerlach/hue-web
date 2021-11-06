@@ -1,0 +1,26 @@
+name: tests
+
+on:
+  push:
+    branches:
+      - 'feat/ci-tests'
+  pull_request:
+    branches:
+      - 'feat/ci-tests'
+  workflow_dispatch:
+
+jobs:
+  test-api:
+    name: 🔍 API Test
+    continue-on-error: false
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout own repository
+        uses: actions/checkout@v2
+      - name: YARN install
+        uses: bahmutov/npm-install@v1
+        with:
+          working-directory: api
+      - name: YARN test
+        run: yarn run test
+        working-directory: api
