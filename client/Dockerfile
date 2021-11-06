@@ -1,4 +1,4 @@
-FROM node:15.2.0-alpine AS init
+FROM node:16-alpine AS init
 
 WORKDIR /app
 RUN chown -R node:node /app
