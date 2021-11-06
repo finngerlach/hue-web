@@ -61,4 +61,6 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: containers
-          path: ./hue-web_{api,client}.tar
+          path: |
+            hue-web_api.tar
+            hue-web_client.tar
