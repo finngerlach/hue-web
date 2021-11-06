@@ -19,3 +19,18 @@ jobs:
       - name: YARN test
         run: yarn run test
         working-directory: api
+
+  lint-api:
+    name: 🔍 API Lint
+    continue-on-error: false
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout own repository
+        uses: actions/checkout@v2
+      - name: YARN install
+        uses: bahmutov/npm-install@v1
+        with:
+          working-directory: api
+      - name: YARN lint
+        run: yarn run lint
+        working-directory: api
