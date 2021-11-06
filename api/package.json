@@ -4,7 +4,8 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node src/",
-    "dev": "nodemon src/"
+    "dev": "nodemon src/",
+    "test": "jest --coverage"
   },
   "dependencies": {
     "config": "^3.3.6",
