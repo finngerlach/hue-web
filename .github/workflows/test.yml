@@ -34,3 +34,31 @@ jobs:
       - name: YARN lint
         run: yarn run lint
         working-directory: api
+        
+  generate-container:
+    name: 🧰 Generate containers
+    #if: (github.ref == 'refs/heads/dev' || github.ref == 'refs/heads/main') && github.event_name === 'push'
+    runs-on: ubuntu-latest
+    needs: [test-api, lint-api]
+    steps:
+      - name: Checkout own repository
+        uses: actions/checkout@v2
+      - name: YARN install
+        uses: bahmutov/npm-install@v1
+        with:
+          working-directory: |
+            api
+            client
+        env:
+          NODE_ENV: production
+      - name:  Build containers
+        run: COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose -f docker-compose.staging.yml build
+      - name: Export containers to files
+        run: |
+          docker save -o hue-web_api.tar hue-web_api
+          docker save -o hue-web_client.tar hue-web_client
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: containers
+          path: ./hue-web_{api,client}.tar
