@@ -62,5 +62,5 @@ jobs:
         with:
           name: containers
           path: |
-            hue-web_api.tar
-            hue-web_client.tar
+            hue-web_api.tar.gz
+            hue-web_client.tar.gz
