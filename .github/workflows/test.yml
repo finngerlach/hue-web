@@ -2,11 +2,7 @@ name: tests
 
 on:
   push:
-    branches:
-      - 'feat/ci-tests'
   pull_request:
-    branches:
-      - 'feat/ci-tests'
   workflow_dispatch:
 
 jobs:
